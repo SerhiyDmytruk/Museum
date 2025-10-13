@@ -1,7 +1,43 @@
 @import 'utils';
 @import 'fonts';
 @import 'typography';
+@import 'parts/header';
+@import 'parts/hero';
+@import 'parts/events';
+@import 'parts/gallery';
+@import 'parts/subscribe';
+@import 'parts/footer';
 
-body {
-  background: $c-gray;
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.section {
+  @include container;
+
+  &.section--events,
+  &.section--banner,
+  &.section--gallery,
+  &.section--subscribe {
+    > * {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &.section--banner,
+  &.section--subscribe {
+    padding: 0;
+  }
+}
+
+.title-h2 {
+  font-family: Montserrat, sans-serif;
+  font-size: 48px;
+  color: #0f0e08;
+  font-weight: 700;
+  margin-bottom: 56px;
 }

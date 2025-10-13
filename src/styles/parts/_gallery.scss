@@ -1,0 +1,25 @@
+.section.section--gallery {
+  margin-bottom: 200px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  gap: 30px;
+
+  &__item {
+    &:nth-child(1),
+    &:nth-child(4) {
+      grid-column: span 4;
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      grid-column: span 8;
+    }
+  }
+
+  &__item img {
+    @include hover(transform, scale(1.05));
+  }
+}

@@ -1,0 +1,38 @@
+.header {
+  @include container;
+
+  display: flex;
+  position: sticky;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  align-items: center;
+
+  &__toggle {
+    @include reset-button;
+  }
+
+  &__logo {
+    margin: 0 auto;
+  }
+
+  &__overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: hsl(0deg 0% 0% / 54%);
+    z-index: 10;
+  }
+
+  &__menu {
+    position: fixed;
+    width: 100%;
+    height: 233;
+    top: 0;
+    left: 0;
+    background-color: #1a5a4c;
+    z-index: 15;
+  }
+}
