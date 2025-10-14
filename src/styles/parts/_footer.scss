@@ -109,6 +109,11 @@
     }
   }
 
+  &__address {
+    text-decoration: none;
+    color: $dark-grey;
+  }
+
   &__menu,
   &__social {
     list-style: none;
