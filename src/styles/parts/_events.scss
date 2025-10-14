@@ -2,10 +2,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 104px;
+  flex-direction: column;
+
+  @include on-tablet {
+    flex-direction: row;
+    margin-bottom: 112px;
+  }
+
+  @include on-desktop {
+    margin-bottom: 104px;
+  }
 
   &__img {
-    max-width: 670px;
+    width: 100%;
+
+    @include on-tablet {
+      max-width: 670px;
+    }
 
     img {
       width: 100%;
@@ -13,23 +26,36 @@
   }
 
   &__link {
-    max-width: 370px;
     text-decoration: none;
+    width: 100%;
+
+    @include on-tablet {
+      max-width: 370px;
+      padding-left: 20px;
+    }
+
+    @include on-desktop {
+      padding-left: 0;
+    }
   }
 
   &__details {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+
+    @include on-tablet {
+      margin-bottom: 30px;
+    }
   }
 
   &__type {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: $ff-ibm;
     font-weight: 500;
     font-size: 14px;
     color: #687480;
   }
 
   &__date {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: $ff-ibm;
     font-weight: 500;
     font-size: 14px;
     color: #1a5a4c;
@@ -37,25 +63,30 @@
   }
 
   &__title {
-    font-family: Montserrat, sans-serif;
+    font-family: $ff-monserrat;
     font-weight: 400;
-    font-size: 36px;
+    font-size: 28px;
+    margin-top: 0;
     margin-bottom: 15px;
-    color: #0f0e08;
+    color: $dark-grey;
+
+    @include on-tablet {
+      font-size: 36px;
+    }
 
     &::after {
       content: '';
       display: inline-block;
       width: 15px;
       height: 15px;
-      background-color: #f14a27;
+      background-color: $tomato;
       margin-left: 20px;
       transform: translateY(-5px);
     }
   }
 
   &__desc {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: $ff-ibm;
     font-weight: 300;
     font-size: 16px;
     color: #4e4e4e;
@@ -66,17 +97,30 @@
   flex-direction: column;
   position: relative;
 
+  @include on-tablet {
+    margin-bottom: 0;
+  }
+
   .event {
     &__img {
       max-width: 100%;
     }
 
     &__link {
-      max-width: 570px;
-      background-color: #fff;
+      max-width: 280px;
+      background-color: $color-white;
       box-shadow: 0 2px 0 0 #1a5a4c40;
-      padding: 20px 100px 50px;
-      transform: translateY(-100px);
+      padding: 20px 5px;
+      transform: translateY(-28px);
+      text-align: center;
+
+      @include on-tablet {
+        text-align: left;
+
+        max-width: 570px;
+        padding: 20px 100px 50px;
+        transform: translateY(-88px);
+      }
     }
 
     &__details {
@@ -86,6 +130,10 @@
     &__title {
       margin-top: 16px;
       margin-bottom: 0;
+
+      &::after {
+        display: none;
+      }
     }
   }
 }

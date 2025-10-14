@@ -1,36 +1,71 @@
 .section.section--hero {
-  grid-template-areas: 'info banner';
   margin-top: -70px;
-  margin-bottom: 200px;
+  padding: 0;
+  margin-bottom: 70px;
+
+  @include on-desktop {
+    margin-bottom: 200px;
+  }
 }
 
 .hero {
   &__info {
-    grid-area: info;
-    grid-column: span 5;
+    grid-column: span 6;
 
     display: flex;
     align-items: center;
     flex-flow: column wrap;
-
     justify-content: center;
+
+    order: 1;
+
+    @include on-tablet {
+      grid-column: span 3;
+      order: 0;
+    }
+
+    @include on-desktop {
+      grid-column: span 5;
+    }
   }
 
   &__banner {
-    grid-area: banner;
-    grid-column: span 7;
+    grid-column: span 6;
+    order: 0;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: span 7;
+    }
+
+    img {
+      width: 100%;
+    }
   }
 
   &__title {
-    font-family: Montserrat, sans-serif;
-    font-size: 72px;
-    color: black;
+    font-family: $ff-monserrat;
+    font-size: 45px;
+    color: $dark-grey;
     font-weight: 700;
     text-transform: uppercase;
+    text-align: center;
+
+    @include on-tablet {
+      font-size: 54px;
+      text-align: left;
+    }
+
+    @include on-desktop {
+      font-size: 72px;
+    }
   }
 
   &__button {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: $ff-ibm;
     border: 1px solid #1a5a4c;
     text-transform: uppercase;
     display: flex;
@@ -43,7 +78,7 @@
       height: 70px;
       width: 200px;
       font-weight: 500;
-      color: #0f0e08;
+      color: $dark-grey;
 
       display: flex;
       align-items: center;

@@ -1,9 +1,10 @@
 .footer {
-  padding: 50px 55px 35px;
+  padding: 20px 30px 55px;
   margin: 0 auto;
 
   @include on-tablet {
     max-width: $tablet-min-width;
+    padding: 50px 35px 35px;
   }
 
   @include on-desktop {
@@ -11,43 +12,81 @@
   }
 
   @include on-desktop-wide {
+    padding: 50px 55px 35px;
     max-width: $desktop-wide-min-width;
   }
 
   &__top {
     display: grid;
 
-    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
-    gap: 30px;
-
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: $ff-ibm;
     font-weight: 400;
     font-size: 14px;
     line-height: 26px;
-  }
 
-  &__left {
-    grid-column: span 7;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 20px;
 
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-  }
-
-  &__right {
-    grid-column: span 5;
-
-    border-top: 1px solid #1a5a4c80;
+    @include on-tablet {
+      grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    }
 
     @include on-desktop {
-      border-top: 0;
-      border-left: 1px solid #1a5a4c80;
-      padding-left: 69px;
+      grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+      gap: 30px;
     }
   }
 
   &__col {
     max-width: 170px;
+    min-width: 100px;
+
+    &:nth-child(1) {
+      grid-column: -1 / 1;
+
+      @include on-tablet {
+        grid-column: span 1;
+      }
+
+      @include on-desktop {
+        grid-column: span 3;
+      }
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      grid-column: span 1;
+
+      @include on-tablet {
+        grid-column: 1 / 2;
+      }
+
+      @include on-desktop {
+        grid-column: span 2;
+      }
+    }
+
+    &:nth-child(4) {
+      grid-column: -1 / 1;
+      max-width: 500px;
+      border-top: 1px solid #1a5a4c80;
+
+      padding-top: 64px;
+      margin-top: 64px;
+
+      @include on-tablet {
+        grid-column: 2 / 7;
+      }
+
+      @include on-desktop {
+        padding-top: 0;
+        margin-top: 0;
+        grid-column: 8 / -1;
+        border-top: 0;
+        border-left: 1px solid #1a5a4c80;
+        padding-left: 69px;
+      }
+    }
   }
 
   &__menu,
@@ -72,7 +111,7 @@
 
     a {
       text-decoration: none;
-      color: #0f0e08;
+      color: $dark-grey;
     }
   }
 
@@ -80,6 +119,7 @@
     margin-top: 62px;
     display: flex;
     justify-content: space-between;
+    max-width: 70px;
   }
 
   &__copyright {
@@ -87,11 +127,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: column;
 
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: $ff-ibm;
     font-weight: 300;
     font-size: 12px;
 
-    color: #0f0e08;
+    color: $dark-grey;
+
+    gap: 10px;
+
+    @include on-tablet {
+      flex-direction: row;
+    }
   }
 }
