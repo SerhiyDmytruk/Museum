@@ -8,6 +8,11 @@
     />
     <title>Na Mu</title>
     <link
+      rel="icon"
+      href="images/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
       rel="preconnect"
       href="https://fonts.googleapis.com"
     />
@@ -74,16 +79,36 @@
           <nav>
             <ul>
               <li>
-                <a href="#gallery">Галерея</a>
+                <a
+                  href="#gallery"
+                  class="toggle-action"
+                >
+                  Галерея
+                </a>
               </li>
               <li>
-                <a href="#subscribe">Про Нас</a>
+                <a
+                  href="#subscribe"
+                  class="toggle-action"
+                >
+                  Про Нас
+                </a>
               </li>
               <li>
-                <a href="#events">Виставки та події</a>
+                <a
+                  href="#events"
+                  class="toggle-action"
+                >
+                  Виставки та події
+                </a>
               </li>
               <li>
-                <a href="#subscribe">Контакти</a>
+                <a
+                  href="#subscribe"
+                  class="toggle-action"
+                >
+                  Контакти
+                </a>
               </li>
             </ul>
           </nav>
@@ -240,30 +265,34 @@
         <h2 class="title-h2">Галерея</h2>
 
         <div class="gallery">
-          <div class="gallery__item">
-            <img
-              src="images/gal-1.jpg"
-              alt="Gal img 1"
-            />
+          <div class="gallery__container">
+            <div class="gallery__item">
+              <img
+                src="images/gal-1.jpg"
+                alt="Gal img 1"
+              />
+            </div>
+            <div class="gallery__item">
+              <img
+                src="images/gal-2.jpg"
+                alt="Gal img 2"
+              />
+            </div>
+            <div class="gallery__item">
+              <img
+                src="images/gal-3.jpg"
+                alt="Gal img 3"
+              />
+            </div>
+            <div class="gallery__item">
+              <img
+                src="images/gal-4.jpg"
+                alt="Gal img 4"
+              />
+            </div>
           </div>
-          <div class="gallery__item">
-            <img
-              src="images/gal-2.jpg"
-              alt="Gal img 2"
-            />
-          </div>
-          <div class="gallery__item">
-            <img
-              src="images/gal-3.jpg"
-              alt="Gal img 3"
-            />
-          </div>
-          <div class="gallery__item">
-            <img
-              src="images/gal-4.jpg"
-              alt="Gal img 4"
-            />
-          </div>
+
+          <div class="gallery__dots"></div>
         </div>
       </section>
 
@@ -282,7 +311,10 @@
             <h2 class="subscribe__title">Підписка</h2>
             <p>Бути в курсі всіх актуальних подій та останніх новин.</p>
 
-            <form class="subscribe__form">
+            <form
+              class="subscribe__form"
+              id="form"
+            >
               <input
                 class="subscribe__input"
                 type="email"
@@ -323,7 +355,7 @@
             <ul class="footer__social">
               <li>
                 <a
-                  href="http://facebook.com"
+                  href="https://www.facebook.com/namu.museum/"
                   target="_blank"
                 >
                   <svg
@@ -342,7 +374,7 @@
               </li>
               <li>
                 <a
-                  href="http://insta.com"
+                  href="https://www.instagram.com/namu.museum/"
                   target="_blank"
                 >
                   <svg

@@ -1,5 +1,5 @@
 .footer {
-  padding: 20px 30px 55px;
+  padding: 50px 30px 55px;
   margin: 0 auto;
 
   @include on-tablet {
@@ -42,14 +42,26 @@
     min-width: 100px;
 
     &:nth-child(1) {
+      max-width: 100%;
       grid-column: -1 / 1;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 40px;
 
       @include on-tablet {
         grid-column: span 1;
+        max-width: 170px;
+        display: block;
+        margin-bottom: 0;
       }
 
       @include on-desktop {
         grid-column: span 3;
+      }
+
+      img {
+        width: 62px;
+        height: 72px;
       }
     }
 
@@ -87,6 +99,14 @@
         padding-left: 69px;
       }
     }
+
+    strong {
+      display: block;
+
+      @include on-tablet {
+        display: inline;
+      }
+    }
   }
 
   &__menu,
@@ -116,10 +136,14 @@
   }
 
   &__social {
-    margin-top: 62px;
     display: flex;
     justify-content: space-between;
     max-width: 70px;
+    width: 100%;
+
+    @include on-tablet {
+      margin-top: 62px;
+    }
   }
 
   &__copyright {
