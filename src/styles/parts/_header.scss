@@ -2,10 +2,8 @@
   @include container;
 
   display: flex;
-  position: sticky;
+  position: relative;
   z-index: 5;
-  top: 19px;
-  left: 0;
   align-items: center;
 
   &__toggle {
@@ -30,6 +28,8 @@
     left: 0;
     background-color: hsl(0deg 0% 0% / 54%);
     z-index: 10;
+
+    @include hover(transform, translateY(0));
   }
 
   &__menu {
@@ -45,10 +45,16 @@
     color: white;
     font-family: $ff-ibm;
     flex-direction: column;
+    
+    @include hover(transform, translateY(0));
 
     @include on-tablet {
       padding: 40px;
       flex-direction: row;
+    }
+
+    @include on-desktop {
+      justify-content: center;
     }
   }
 
@@ -68,6 +74,11 @@
         position: absolute;
         top: 0;
         left: 0;
+      }
+
+      @include on-desktop {
+        top: -13px;
+        left: 51px; 
       }
     }
 
@@ -110,7 +121,7 @@
     flex-flow: row wrap;
     padding-top: 24px;
 
-    @include on-desktop {
+    @include on-tablet {
       border-top: 0;
       border-left: 1px solid $color-white;
       padding-left: 102px;
@@ -134,7 +145,7 @@
 body:not(._menu-open) {
   .header__overlay,
   .header__menu {
-    display: none;
+    transform: translateY(-100%);
   }
 }
 
