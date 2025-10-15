@@ -5,6 +5,11 @@
   position: relative;
   z-index: 5;
   align-items: center;
+  margin-top: 10px;
+
+  @include on-tablet {
+    margin-top: 15px;
+  }
 
   &__toggle {
     @include reset-button;
