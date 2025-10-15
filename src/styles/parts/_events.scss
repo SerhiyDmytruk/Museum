@@ -15,6 +15,7 @@
   }
 
   @include on-desktop {
+    align-items: center;
     flex-direction: row;
     margin-bottom: 104px;
   }
