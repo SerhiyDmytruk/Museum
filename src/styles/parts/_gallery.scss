@@ -1,7 +1,13 @@
 .section.section--gallery {
-  margin-bottom: 100px;
+  margin-top: 26px;
+  margin-bottom: 145px;
+
+  @include on-tablet {
+      margin-top: -17px;
+  }
 
   @include on-desktop {
+    margin-top: 0;
     margin-bottom: 200px;
   }
 }
@@ -12,19 +18,19 @@
     gap: 10px;
     scroll-behavior: smooth;
 
-    @media (max-width: 375px) {
+    @media (max-width: 1268px) {
       scroll-snap-type: x mandatory;
       overflow-x: auto;
     }
 
     @include on-tablet {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-      gap: 30px;
+      min-height: 535px;
     }
 
     @include on-desktop {
+      display: grid;
       grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+      gap: 30px;
     }
   }
 
@@ -60,7 +66,6 @@
 
     @include on-tablet {
       grid-column: span 4;
-      flex: unset;
     }
 
     &:nth-child(2),

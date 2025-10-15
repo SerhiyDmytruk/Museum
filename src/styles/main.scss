@@ -33,7 +33,14 @@ body {
     }
   }
 
-  &.section--banner,
+  &.section--banner {
+    @include on-desktop {
+      padding: 0;
+      max-width: 100%;
+    }
+  }
+
+
   &.section--subscribe {
     padding: 0;
     max-width: 100%;
@@ -43,14 +50,20 @@ body {
 .title-h2 {
   font-family: $ff-monserrat;
   font-size: 36px;
+  line-height: 1;
   color: $dark-grey;
   font-weight: 700;
   margin-top: 0;
-  margin-bottom: 56px;
+  margin-bottom: 20px;
   text-align: center;
 
   @include on-tablet {
     text-align: left;
     font-size: 48px;
+    margin-bottom: 13px;
+  }
+
+  @include on-desktop {
+    margin-bottom: 56px;
   }
 }

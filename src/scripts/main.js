@@ -17,6 +17,9 @@ toggle.forEach((item) => {
 });
 
 // Scroll btn
+const btnTop = document.querySelector('.scroll-top');
+
+btnTop.addEventListener('click', scrollTop);
 
 function scrollTop() {
   window.scrollTo({
@@ -26,7 +29,6 @@ function scrollTop() {
 }
 
 // Form
-
 const form = document.querySelector('#form');
 
 form.addEventListener('submit', (e) => {
