@@ -10,6 +10,7 @@
 
   @include on-desktop {
     margin-bottom: 200px;
+    max-width: 100%;
   }
 }
 
@@ -31,9 +32,10 @@
     }
 
     @include on-desktop {
-      align-items: center;
+      align-items: self-end;
       justify-content: center;
-      grid-column: span 5;
+      grid-column: 3 / 7;
+      max-width: 470px;
     }
   }
 
@@ -48,7 +50,8 @@
     }
 
     @include on-desktop {
-      grid-column: span 7;
+      grid-column: 8 / -1;
+      position: relative;
     }
 
     img {
