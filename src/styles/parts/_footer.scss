@@ -140,6 +140,10 @@
       text-decoration: none;
       color: $dark-grey;
     }
+
+    @include on-desktop {
+      min-width: 210px;
+    }
   }
 
   &__social {
